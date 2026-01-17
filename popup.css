@@ -1,0 +1,34 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 250px;
+  padding: 12px;
+  background: #111;
+  color: #fff;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.low { color: #4caf50; }
+.medium { color: #ff9800; }
+.high { color: #f44336; }
+
+button {
+  margin-top: 10px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #2196f3;
+  color: #fff;
+}
+
+ul { 
+  margin: 10px 0 0 0; 
+  padding-left: 20px; 
+}
+
+

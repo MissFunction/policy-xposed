@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clickable Banner Scroll</title>
+<style>
+  body {
+    font-family: sans-serif;
+    padding: 50px;
+  }
+
+  #banner {
+    background-color: #ff4500;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 600px; /* ensure enough scroll space */
+  }
+
+  #risky-word {
+    font-weight: bold;
+    transition: background 0.5s, transform 0.3s;
+  }
+
+  #risky-word.highlight {
+    background-color: yellow;
+    transform: scale(1.3);
+  }
+</style>
+</head>
+<body>
+
+<div id="banner">CLICK HERE TO SEE THE RISKY WORD!</div>
+
+<p>Scroll down to find the word…</p>
+<p>Just a bit more content...</p>
+<p>Almost there...</p>
+
+<p>Here it is: <span id="risky-word">RISKY</span> word!</p>
+
+<script>
+  // Simple click handler
+  document.getElementById('banner').onclick = function() {
+    var word = document.getElementById('risky-word');
+    word.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    word.classList.add('highlight');
+    setTimeout(function() {
+      word.classList.remove('highlight');
+    }, 1500);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clickable Banner Demo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  #banner {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 100px;
+  }
+
+  #risky-word {
+    transition: background 0.5s, transform 0.3s;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  #risky-word.scrolled {
+    background-color: yellow;
+    transform: scale(1.2);
+  }
+</style>
+</head>
+<body>
+
+<div id="banner">Click me to see the risky word!</div>
+
+<p>Lots of text above so scrolling is visible...</p>
+<p>Keep going...</p>
+<p>Almost there...</p>
+<p>Here it is: <span id="risky-word">RISKY</span> word!</p>
+
+<script>
+  // Absolute simple click listener
+  var banner = document.getElementById("banner");
+  var risky = document.getElementById("risky-word");
+
+  banner.onclick = function() {
+    risky.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    risky.classList.add('scrolled');
+    setTimeout(function() { risky.classList.remove('scrolled'); }, 1500);
+  }
+</script>
+
+</body>
+</html>
